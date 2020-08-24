@@ -14,3 +14,16 @@
 ### Phase 3
 - Installing nodemon package whith command: npm install nodemon --save-dev
 - Nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+
+### Phase 4
+
+- Restarting the debugger automatically after editing application
+- To do this step you need to:
+1. Go to Debug/Add Configuration in VS Code
+2. Go to launch.json and write lines of code:
+   - "restart": true
+   - "runtimeExecutable": "nodemon"
+   - "console": "integratedTerminal"
+3. In terminal write:
+   - npm install nodemon -g (Windows)   
+   - sudo npm install nodemon -g (Mac and Linux) 
