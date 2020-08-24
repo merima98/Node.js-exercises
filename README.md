@@ -1,7 +1,7 @@
 # Node.js-exercises
 📝 This repository contains NodeJS exercises followed through Udemy course on topic ''NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)''
 
-##1
+### Phase 1
 Creating files: app.js, message.txt and routes.js
 In routes.js file is imported fs (file sistem) which is used to write inserted message in message.txt. 
 The message.txt file stores the message that the user enters each time (the message is not saved, it is overwritten each time)
