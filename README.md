@@ -9,4 +9,8 @@
 
 ### Phase 2
 - Adding configuration file to a project (npm init - for starting configuration)
-Allows users who have not created a project to start the "npm start" project in a well-known way
+- Allows users who have not created a project to start the "npm start" project in a well-known way
+
+### Phase 3
+- Installing nodemon package whith command: npm install nodemon --save-dev
+- Nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
