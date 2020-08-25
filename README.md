@@ -46,3 +46,19 @@
 - Adding Middleware 
 - In app.js do some changes:
   1. app.use((req,res,next)=>{});
+  
+### Phase 7
+
+- Parsing incoming requests
+
+- For parsing incomming requests do next steps:
+  
+  1. In terminal type: npm install --save body parser
+  
+  2. Add some changes in app.js:
+     
+	 - const bodyParser = require('body-parser');
+
+     - app.use(bodyParser.urlencoded({extended: true}));
+  
+  
