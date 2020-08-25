@@ -27,3 +27,17 @@
 3. In terminal write:
    - npm install nodemon -g (Windows)   
    - sudo npm install nodemon -g (Mac and Linux) 
+   
+### Phase 5
+- Installing Express.js
+- For installation it is necessary to run the following command through the terminal:
+
+  1. npm install --save express
+  
+- Do some changes in app.js:
+
+  1. const  express = require('express');
+
+  2. const  app = express();
+
+  3. const server = http.createServer(app);   
