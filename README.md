@@ -51,7 +51,7 @@
 
 - Parsing incoming requests
 
-- For parsing incomming requests do next steps:
+- For parsing incoming requests do next steps:
   
   1. In terminal type: npm install --save body parser
   
