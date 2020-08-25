@@ -41,3 +41,8 @@
   2. const  app = express();
 
   3. const server = http.createServer(app);   
+  
+### Phase 6
+- Adding Middleware 
+- In app.js do some changes:
+  1. app.use((req,res,next)=>{});
