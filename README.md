@@ -60,5 +60,12 @@
 	 - const bodyParser = require('body-parser');
 
      - app.use(bodyParser.urlencoded({extended: true}));
+	 
+### Phase 8
+
+- Creating routes and views folders
+- routes for storing routes for admin (which routes can use admin) and shop (which routes can use end users)
+- views for storing HTML pages
+	 
   
   
