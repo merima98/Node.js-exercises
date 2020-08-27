@@ -66,6 +66,11 @@
 - Creating routes and views folders
 - routes for storing routes for admin (which routes can use admin) and shop (which routes can use end users)
 - views for storing HTML pages
+
+### Phase 9
+
+- Adding HTML and CSS to a project
+- One note: add line "app.use(express.static(path.join(__dirname, 'public')));" if you serving files statically
 	 
   
   
