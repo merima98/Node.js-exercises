@@ -74,6 +74,17 @@
 
 - Adding HTML and CSS to a project
 - One note: add line "app.use(express.static(path.join(__dirname, 'public')));" if you serving files statically
+
+### Phase 10
+
+- Installing and Implementing pug
+
+- To install pug write "npm install --save ejs pug express-handlers" in the terminal
+
+- For implementing pug add some changes to:
+  
+  - app.js: "app.set('view engine','pug');"
+  - shop.js: "res.render('shop');"
 	 
   
   
