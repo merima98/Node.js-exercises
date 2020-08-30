@@ -86,7 +86,7 @@
   - app.js: "app.set('view engine','pug');"
   - shop.js: "res.render('shop');"
   
-### Phase 10
+### Phase 11
 
 - Converting project to handlebars
 
@@ -98,6 +98,19 @@
      
 	- app.engine('handlebars', expressHbs());
 	- app.set('view engine','handlebars');
+
+  - to use layouts to handlebars add changes to app.js:
+    
+	- app.engine(
+	  'hbs',
+	  expressHbs({
+		layoutsDir: 'views/layouts/',
+		defaultLayout: 'main-layout',
+		extname: 'hbs'
+	  })
+	);
+	
+	
 	 
   
   
