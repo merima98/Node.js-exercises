@@ -85,6 +85,19 @@
   
   - app.js: "app.set('view engine','pug');"
   - shop.js: "res.render('shop');"
+  
+### Phase 10
+
+- Converting project to handlebars
+
+- To convert project to handlebars to next steps:
+  
+  - run command "npm install --save express-handlebars@3.0" in the terminal
+  
+  - add some changes in app.js:
+     
+	- app.engine('handlebars', expressHbs());
+	- app.set('view engine','handlebars');
 	 
   
   
