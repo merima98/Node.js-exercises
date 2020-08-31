@@ -110,7 +110,27 @@
 	  })
 	);
 	
-	
+
+### Phase 12
+
+- Working with EJS template
+
+- *To work with EJS you do not need to register app.engine()*;
+
+- Add some changes to app.js *remove next lines of conde*:
+ 
+  - const expressHbs = require('express-handlebars');
+  
+  - app.engine(
+	  'hbs',
+	   expressHbs({
+	   layoutsDir: 'views/layouts/',
+	   defaultLayout: 'main-layout',
+	   extname: 'hbs'
+	  })
+	);
+ 
+  
 	 
   
   
