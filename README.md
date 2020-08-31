@@ -117,7 +117,7 @@
 
 - *To work with EJS you do not need to register app.engine()*;
 
-- Add some changes to app.js *remove next lines of conde*:
+- Add some changes to app.js *remove next lines of code*:
  
   - const expressHbs = require('express-handlebars');
   
