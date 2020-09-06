@@ -130,6 +130,9 @@
 	  })
 	);
  
+### Phase 13
+
+- To interact with SQL you need to write *"npm install -save mysql2"* in the terminal
   
 	 
   
