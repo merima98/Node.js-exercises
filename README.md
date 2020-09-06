@@ -133,6 +133,11 @@
 ### Phase 13
 
 - To interact with SQL you need to write *"npm install -save mysql2"* in the terminal
+
+
+### Phase 14
+
+- To work with sequelize you need to write *"npm install -save sequelize"* in the terminal
   
 	 
   
