@@ -18,13 +18,7 @@ app.set('views',__dirname+ '/views');
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
-db.execute('SELECT * FROM products')
-.then(result=>{
-    console.log(result[0], result[1]);
-})
-.catch(err =>{
-    console.log(err);
-});
+
 
 
 const { executionAsyncResource } = require('async_hooks');
