@@ -19,16 +19,16 @@ form {
   display: inline;
 }
 
-.centered{
+.centered {
   text-align: center;
 }
 
-.image{
+.image {
   height: 20rem;
 }
 
-.image img{
-  height: 20rem;
+.image img {
+  height: 100%;
 }
 
 .main-header {
@@ -205,7 +205,18 @@ form {
   color: white;
 }
 
-@media (min-width: 624px) {
+.btn.danger {
+  color: red;
+  border-color: red;
+}
+
+.btn.danger:hover,
+.btn.danger:active {
+  background: red;
+  color: white;
+}
+
+@media (min-width: 660px) {
   .main-header__nav {
     display: flex;
   }
