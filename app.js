@@ -24,9 +24,21 @@ const shopRoutes = require('./routes/shop');
 
 
 const { executionAsyncResource } = require('async_hooks');
+const { use } = require('./routes/shop');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use((req,res,next)=>{
+    User.findByPk(1)
+    .then(user=>{
+        req.user=user;
+        next();
+    })
+    .catch(err=>console.log(err));
+});
+
+
 
 //dodajem
 app.use(express.static('views'));
@@ -42,10 +54,21 @@ Product.belongsTo(User, {constraints: true, onDelete:'CASCADE'});
 User.hasMany(Product);
 
 sequelize
-    .sync({force: true})
+    // .sync({force: true})
+    .sync()
     .then(result=>{ 
+        return User.findByPk(1);
     //console.log(result);
-    app.listen(3500);
+    })
+    .then(user=>{
+        if(!user){
+           return  User.create({name: 'Merima', email: 'test@gmail.com'});
+        }
+        return user;
+    })
+    .then(user=>{
+        // console.log(user);
+        app.listen(3500);
     })
     .catch(err=>console.log(err));
 
