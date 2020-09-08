@@ -9,14 +9,10 @@ const mongoConnect = require('./util/database').mongoConnect;
 
 const app = express();
 
-
-
-
 app.set('view engine', 'ejs');
 app.set('views',__dirname+ '/views');
 
 
-//  TO DO AFTER
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
@@ -37,13 +33,7 @@ app.use((req,res,next)=>{
     next();
 });
 
-
-
-//dodajem
 app.use(express.static('views'));
-//kraj dodavanja
-
-//  TO DO AFTER
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
