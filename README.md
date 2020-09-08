@@ -142,6 +142,14 @@
 
 ### Phase 15 :: Working with MongoDB
 
+- Make sure to do next steps while working with MongoDB:
+  
+  - Create an account at mongoDB/Cloud/Atlas at: https://www.mongodb.com/cloud/atlas
+  - Create new *user*
+  - Add IP Address
+  - Create a cluster
+  - Download MongoBD Compass for required OS
+  
 - To work with MongoDB you need to write *"npm install -save mongodb"* in the terminal
 
 
