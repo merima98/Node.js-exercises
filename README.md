@@ -130,15 +130,22 @@
 	  })
 	);
  
-### Phase 13
+### Phase 13 :: Working with MySQL
 
 - To interact with SQL you need to write *"npm install -save mysql2"* in the terminal
 
 
-### Phase 14
+### Phase 14 :: Working with Sequelize
 
 - To work with sequelize you need to write *"npm install -save sequelize"* in the terminal
-  
+
+
+### Phase 15 :: Working with MongoDB
+
+- To work with MongoDB you need to write *"npm install -save mongodb"* in the terminal
+
+
+
 	 
   
   
