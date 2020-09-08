@@ -4,7 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const errorController = require('./controllers/error');
-const mongoConnect = require('./util/database');
+const mongoConnect = require('./util/database').mongoConnect;
 
 
 const app = express();
@@ -17,7 +17,7 @@ app.set('views',__dirname+ '/views');
 
 
 //  TO DO AFTER
-// const adminRoutes = require('./routes/admin');
+const adminRoutes = require('./routes/admin');
 // const shopRoutes = require('./routes/shop');
 
 
@@ -37,6 +37,7 @@ app.use((req,res,next)=>{
     //     next();
     // })
     // .catch(err=>console.log(err));
+    next();
 });
 
 
@@ -46,13 +47,12 @@ app.use(express.static('views'));
 //kraj dodavanja
 
 //  TO DO AFTER
-// app.use('/admin', adminRoutes);
+app.use('/admin', adminRoutes);
 // app.use(shopRoutes);
 
 app.use(errorController.get404);
 
-mongoConnect((client)=>{
-    console.log(client);
+mongoConnect(()=>{
     app.listen(3500);
 });
 
