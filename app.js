@@ -18,10 +18,7 @@ app.set('views',__dirname+ '/views');
 
 //  TO DO AFTER
 const adminRoutes = require('./routes/admin');
-// const shopRoutes = require('./routes/shop');
-
-
-
+const shopRoutes = require('./routes/shop');
 
 const { executionAsyncResource } = require('async_hooks');
 //  TO DO AFTER
@@ -48,7 +45,7 @@ app.use(express.static('views'));
 
 //  TO DO AFTER
 app.use('/admin', adminRoutes);
-// app.use(shopRoutes);
+app.use(shopRoutes);
 
 app.use(errorController.get404);
 
