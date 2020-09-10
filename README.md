@@ -132,6 +132,7 @@
  
 ### Phase 13 :: Working with MySQL
 
+- Make sure to download MySQL Workbench
 - To interact with SQL you need to write *"npm install -save mysql2"* in the terminal
 
 
