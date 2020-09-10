@@ -153,6 +153,11 @@
   
 - To work with MongoDB you need to write *"npm install -save mongodb"* in the terminal
 
+### Phase 16 :: Working with Mongoose
+
+- To work with Mongoose you need to write *"npm install -save mongoose"* in the terminal
+- For more introduction to the mongoose, it is nice to learn from *https://mongoosejs.com/*
+
 
 
 	 
