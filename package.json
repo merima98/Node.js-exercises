@@ -25,6 +25,7 @@
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "express-handlebars": "^3.0.2",
+    "express-session": "^1.17.1",
     "mongodb": "^3.6.1",
     "mongoose": "^5.10.4",
     "mysql2": "^2.1.0",
