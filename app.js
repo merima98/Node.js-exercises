@@ -15,9 +15,10 @@ app.set('views',__dirname+ '/views');
 
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
+const authRoutes = require('./routes/auth');
+
 
 const { executionAsyncResource } = require('async_hooks');
-//const { use } = require('./routes/shop');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -34,6 +35,7 @@ app.use((req,res,next)=>{
 app.use(express.static('views'));
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
+app.use(authRoutes);
 
 app.use(errorController.get404);
 
