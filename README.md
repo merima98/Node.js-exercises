@@ -158,6 +158,10 @@
 - To work with Mongoose you need to write *"npm install -save mongoose"* in the terminal
 - For more introduction to the mongoose, it is nice to learn from *https://mongoosejs.com/*
 
+### Phase 16 :: Using the Session Middleware
+
+- Write *npm install --save express-session* in the terminal to install Session
+- Write: *app.js: const session = require('express-session');* in the app.js to include session in the project
 
 
 	 
