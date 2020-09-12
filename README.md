@@ -163,6 +163,47 @@
 - Write *npm install --save express-session* in the terminal to install Session
 - Write: *app.js: const session = require('express-session');* in the app.js to include session in the project
 
+### Phase 16 :: Using MongoBD to store sessions
+
+- Write *npm install --save connect-mongodb-session* in the terminal to let express session package store data in the database
+- Add changes in the app.js:
+	- const MongoDBStore = require('connect-mongodb-session')(session);
+	- const MONGODB_URI =   'mongodb+srv://merima98:merima1998@cluster0.w4ehk.mongodb.net/shop';
+	- const store = new MongoDBStore({
+    uri: MONGODB_URI,
+    collection: 'sessions'
+	});
+	- app.use(
+    session({
+        secret: 'my secret', 
+        resave: false, 
+        saveUninitialized: false,
+        store: store
+    })
+	);
+	- mongoose
+	.connect(
+		MONGODB_URI
+		)
+	.then(result=>{
+		User.findOne().then(user=>{
+			if(!user){
+				const user = new User({
+					name: 'Merima',
+					email: 'merima@gmail.com',
+					cart:{
+						items: []
+					}
+				});
+				user.save();
+			}
+		});
+		app.listen(3500);
+	}).catch(err=>{
+		console.log(err);
+ 
+
+
 
 	 
   
