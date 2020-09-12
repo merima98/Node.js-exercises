@@ -4,11 +4,19 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const session = require('express-session');
+const MongoDBStore = require('connect-mongodb-session')(session);
 
 const errorController = require('./controllers/error');
 const User = require('./models/user');
 
+const MONGODB_URI =   'mongodb+srv://merima98:merima1998@cluster0.w4ehk.mongodb.net/shop';
+
+
 const app = express();
+const store = new MongoDBStore({
+    uri: MONGODB_URI,
+    collection: 'sessions'
+});
 
 app.set('view engine', 'ejs');
 app.set('views',__dirname+ '/views');
@@ -24,7 +32,12 @@ const { executionAsyncResource } = require('async_hooks');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(
-    session({secret: 'my secret', resave: false, saveUninitialized: false})
+    session({
+        secret: 'my secret', 
+        resave: false, 
+        saveUninitialized: false,
+        store: store
+    })
 );
 
 app.use((req,res,next)=>{
@@ -43,7 +56,10 @@ app.use(authRoutes);
 
 app.use(errorController.get404);
 
-mongoose.connect('mongodb+srv://merima98:merima1998@cluster0.w4ehk.mongodb.net/shop?retryWrites=true&w=majority')
+mongoose
+.connect(
+    MONGODB_URI
+    )
 .then(result=>{
     User.findOne().then(user=>{
         if(!user){
