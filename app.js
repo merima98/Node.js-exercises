@@ -41,13 +41,17 @@ app.use(
 );
 
 app.use((req,res,next)=>{
-    User.findById('5f5a9ac67e3e380ff0db05d7')
+    if(!req.session.user){
+       return next();
+    }
+    User.findById(req.session.user._id)
     .then(user=>{
-        req.user=user;
+        req.user = user;
         next();
     })
     .catch(err=>console.log(err));
 });
+
 
 app.use(express.static('views'));
 app.use('/admin', adminRoutes);
