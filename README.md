@@ -158,12 +158,12 @@
 - To work with Mongoose you need to write *"npm install -save mongoose"* in the terminal
 - For more introduction to the mongoose, it is nice to learn from *https://mongoosejs.com/*
 
-### Phase 16 :: Using the Session Middleware
+### Phase 17 :: Using the Session Middleware
 
 - Write *npm install --save express-session* in the terminal to install Session
 - Write: *app.js: const session = require('express-session');* in the app.js to include session in the project
 
-### Phase 16 :: Using MongoBD to store sessions
+### Phase 18 :: Using MongoBD to store sessions
 
 - Write *npm install --save connect-mongodb-session* in the terminal to let express session package store data in the database
 - Add changes in the app.js:
@@ -202,7 +202,7 @@
 	}).catch(err=>{
 		console.log(err);
 		
-### Phase 17 :: Adding Authentication
+### Phase 19 :: Adding Authentication
 
 - Write *npm install --save bcryptjs* in the terminal. This is a package that helps us with encryption and that will help us with encrypting the password.
  
