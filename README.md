@@ -201,6 +201,10 @@
 		app.listen(3500);
 	}).catch(err=>{
 		console.log(err);
+		
+### Phase 17 :: Adding Authentication
+
+- Write *npm install --save bcryptjs* in the terminal. This is a package that helps us with encryption and that will help us with encrypting the password.
  
 
 
