@@ -36,7 +36,6 @@ exports.getProduct= (req, res, next)=>{
 };
 
 exports.getIndex=(req, res, next)  =>{
-
     Product.find()
     .then(products=>{
         console.log(products);
@@ -44,8 +43,7 @@ exports.getIndex=(req, res, next)  =>{
             prods: products, 
             pageTitle: 'Shop', 
             path: '/', 
-            layout: 'main-layout',
-            isAuthenticated: req.session.isLoggedIn
+            layout: 'main-layout'
           });
     })
     .catch(err=>{
@@ -92,7 +90,6 @@ exports.postCartDeleteProduct = (req, res, next)  =>{
 };
 
 exports.postOrder= (req,res,next) =>{
-
     req.user
     .populate('cart.items.productId')
     .execPopulate()
@@ -103,7 +100,7 @@ exports.postOrder= (req,res,next) =>{
         });
         const order = new Order({
             user: {
-                name: req.user.name,
+                email: req.user.email,
                 userId: req.user
             },
             products:products
