@@ -205,6 +205,9 @@
 ### Phase 19 :: Adding Authentication
 
 - Write *npm install --save bcryptjs* in the terminal. This is a package that helps us with encryption and that will help us with encrypting the password.
+
+- *Using CSRF Token*
+- Write *npm install --save csurf* in the terminal. This is a package for node express which allows us to genreate a so-called csrf token.
  
 
 
