@@ -65,18 +65,6 @@ mongoose
     MONGODB_URI
     )
 .then(result=>{
-    User.findOne().then(user=>{
-        if(!user){
-            const user = new User({
-                name: 'Merima',
-                email: 'merima@gmail.com',
-                cart:{
-                    items: []
-                }
-            });
-            user.save();
-        }
-    });
     app.listen(3500);
 }).catch(err=>{
     console.log(err);
