@@ -211,6 +211,12 @@
 
 *Working with Flash Messages: *
 - Write *npm install --save connect-flash* in the terminal. This is a package that helps us to work with flash messages, and to show proper message to the end user.
+
+*Add changes in app.js: *
+- const flash = require('connect-flash'); *- include it in the project*
+- app.use(flash()); *- use it in the project (one note: use it after creating session!)*
+
+
  
 
 
