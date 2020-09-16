@@ -217,7 +217,7 @@ Add changes in app.js:
 - app.use(flash()); *- use it in the project (one note: use it after creating session!)*
 
 SENDING EMAILS:
-- Write *npm install --save nodemailer nodemailer-sendgrid-transport*. nodemailer nodemailer-sendgrid-transport
+- Write *npm install --save nodemailer nodemailer-sendgrid-transport*. With this package is provided to send emails from one address to another. User can define subject of the mail, content, sented and reciever of an email. 
 
 
  
