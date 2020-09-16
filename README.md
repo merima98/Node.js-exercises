@@ -208,6 +208,9 @@
 
 - *Using CSRF Token*
 - Write *npm install --save csurf* in the terminal. This is a package for node express which allows us to genreate a so-called csrf token.
+
+*Working with Flash Messages: *
+- Write *npm install --save connect-flash* in the terminal. This is a package that helps us to work with flash messages, and to show proper message to the end user.
  
 
 
