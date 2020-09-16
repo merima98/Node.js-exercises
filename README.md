@@ -216,6 +216,9 @@ Add changes in app.js:
 - const flash = require('connect-flash'); *- include it in the project*
 - app.use(flash()); *- use it in the project (one note: use it after creating session!)*
 
+SENDING EMAILS:
+- Write *npm install --save nodemailer nodemailer-sendgrid-transport*. nodemailer nodemailer-sendgrid-transport
+
 
  
 
