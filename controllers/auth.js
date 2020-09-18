@@ -111,7 +111,7 @@ exports.getSignup = (req, res, next) => {
             res.redirect('/login');
             return transporter.sendMail({
                   to: email,
-                  from: 'merimaceranic98@gmail.com',
+                  from: 'merima.ceranic@edu.fit.ba',
                   subject: 'Signup succeeded!',
                   html: '<h1> You successfully signed up! </h1>'
               });
