@@ -220,6 +220,8 @@ SENDING EMAILS:
 - Write *npm install --save nodemailer nodemailer-sendgrid-transport*. With this package is provided to send emails from one address to another. User can define subject of the mail, content, sented and reciever of an email. 
 
 
+### Phase 20 :: Adding Validation
+
  
 
 
