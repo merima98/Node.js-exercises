@@ -218,6 +218,7 @@ Add changes in app.js:
 
 SENDING EMAILS:
 - Write *npm install --save nodemailer nodemailer-sendgrid-transport*. With this package is provided to send emails from one address to another. User can define subject of the mail, content, sented and reciever of an email. 
+- Create account on Send Grid app.sendgrid.com. Create sender in Sender Authentication. After creating new sender use that email as an email of sender in auth.js.
 
 
 ### Phase 20 :: Adding Validation
