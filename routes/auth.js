@@ -13,7 +13,7 @@ router.post('/logout', authController.postLogout);
 
 router.get('/signup', authController.getSignup);
 
-router.post('/signup', check('email').isEmail(), authController.postSignup);
+router.post('/signup', check('email').isEmail().withMessage('Please enter a valid email!'), authController.postSignup);
 
 router.get('/reset', authController.getReset);
 
