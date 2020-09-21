@@ -223,6 +223,8 @@ SENDING EMAILS:
 
 ### Phase 20 :: Adding Validation
 
+- Write *npm install --save express-validator* in the terminal. This will help users to work with validators. 
+
  
 
 
