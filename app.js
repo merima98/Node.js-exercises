@@ -11,7 +11,7 @@ const flash = require('connect-flash');
 const errorController = require('./controllers/error');
 const User = require('./models/user');
 
-const MONGODB_URI =   'mongodb+srv://merima98:merima1998@cluster0.w4ehk.mongodb.net/shop';
+const MONGODB_URI = 'mongodb+srv://merima98:merima1998@cluster0.w4ehk.mongodb.net/shop';
 
 
 const app = express();
@@ -23,7 +23,7 @@ const store = new MongoDBStore({
 const csrfProtection = csrf();
 
 app.set('view engine', 'ejs');
-app.set('views',__dirname+ '/views');
+app.set('views', __dirname + '/views');
 
 
 const adminRoutes = require('./routes/admin');
@@ -32,13 +32,14 @@ const authRoutes = require('./routes/auth');
 
 
 const { executionAsyncResource } = require('async_hooks');
+const { runInNewContext } = require('vm');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(
     session({
-        secret: 'my secret', 
-        resave: false, 
+        secret: 'my secret',
+        resave: false,
         saveUninitialized: false,
         store: store
     })
@@ -47,20 +48,25 @@ app.use(
 app.use(csrfProtection);
 app.use(flash());
 
-app.use((req,res,next)=>{
-    if(!req.session.user){
-       return next();
+app.use((req, res, next) => {
+    if (!req.session.user) {
+        return next();
     }
     User.findById(req.session.user._id)
-    .then(user=>{
-        req.user = user;
-        next();
-    })
-    .catch(err=>console.log(err));
+        .then(user => {
+            if (!user) {
+                return next();
+            }
+            req.user = user;
+            next();
+        })
+        .catch(err => {
+            throw new Error(err);
+        });
 });
 
 
-app.use((req,res,next)=>{
+app.use((req, res, next) => {
     res.locals.isAuthenticated = req.session.isLoggedIn;
     res.locals.csrfToken = req.csrfToken();
     next();
@@ -74,14 +80,14 @@ app.use(authRoutes);
 app.use(errorController.get404);
 
 mongoose
-.connect(
-    MONGODB_URI
+    .connect(
+        MONGODB_URI
     )
-.then(result=>{
-    app.listen(3500);
-}).catch(err=>{
-    console.log(err);
-});
+    .then(result => {
+        app.listen(3500);
+    }).catch(err => {
+        console.log(err);
+    });
 
 
 
