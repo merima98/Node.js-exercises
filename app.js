@@ -1,5 +1,4 @@
 const path = require('path');
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -9,9 +8,7 @@ const csrf = require('csurf');
 const flash = require('connect-flash');
 const multer = require('multer');
 
-const { v4: uuidv4 } = require('uuid'); //dodavanje
-
-
+const { v4: uuidv4 } = require('uuid');
 const errorController = require('./controllers/error');
 const User = require('./models/user');
 
@@ -104,8 +101,6 @@ app.get('/500', errorController.get500);
 app.use(errorController.get404);
 
 app.use((error, req, res, next) => {
-    // res.status(error.httpStatusCode).render(...);
-    // res.redirect('/500');
     res.status(500).render('500', {
         pageTitle: 'Error!',
         path: '/500',
@@ -118,7 +113,7 @@ mongoose
         MONGODB_URI
     )
     .then(result => {
-        app.listen(process.env.LOCALHOST);
+        app.listen(process.env.PORT);
     }).catch(err => {
         console.log(err);
     });
