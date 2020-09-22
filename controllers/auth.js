@@ -9,7 +9,7 @@ const User = require('../models/user');
 const { findOne } = require('../models/user');
 const user = require('../models/user');
 const { parseConnectionUrl } = require('nodemailer/lib/shared');
-const env = require('custom-env').env('staging');
+const env = require('custom-env').env();
 
 
 
@@ -18,9 +18,6 @@ const transporter = nodemailer.createTransport(sendgridTransport({
     api_key: process.env.API_KEY
   }
 }));
-
-
-
 exports.getLogin = (req, res, next) => {
   let message = req.flash('error');
   if (message.length > 0) {

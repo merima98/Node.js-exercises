@@ -225,6 +225,14 @@ SENDING EMAILS:
 
 - Write *npm install --save express-validator* in the terminal. This will help users to work with validators. 
 
+### Phase 21 :: File Upload & File Download
+
+- Write *npm install --save multer *. This parses incoming requests for files.
+- One NOTE: If you have error with *isLoggedIn is not defined*, then do next:
+	- *npm install --save uuid* in the terminal
+	- Require using: const { v4: uuidv4 } = require('uuid');
+	- Add *cb(null, uuidv4() + '-' + file.originalname);* in fileStorage. This will fix errors that you can have. 
+
  
 
 
