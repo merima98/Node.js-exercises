@@ -11,7 +11,9 @@ const flash = require('connect-flash');
 const errorController = require('./controllers/error');
 const User = require('./models/user');
 
-const MONGODB_URI = 'mongodb+srv://merima98:merima1998@cluster0.w4ehk.mongodb.net/shop';
+const env = require('custom-env').env();
+
+const MONGODB_URI = process.env.MONGODB_URI;
 
 
 const app = express();
@@ -90,7 +92,7 @@ mongoose
         MONGODB_URI
     )
     .then(result => {
-        app.listen(3500);
+        app.listen(process.env.LOCALHOST);
     }).catch(err => {
         console.log(err);
     });

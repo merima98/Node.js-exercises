@@ -9,10 +9,13 @@ const User = require('../models/user');
 const { findOne } = require('../models/user');
 const user = require('../models/user');
 const { parseConnectionUrl } = require('nodemailer/lib/shared');
+const env = require('custom-env').env('staging');
+
+
 
 const transporter = nodemailer.createTransport(sendgridTransport({
   auth: {
-    api_key: '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'
+    api_key: process.env.API_KEY
   }
 }));
 
@@ -168,7 +171,7 @@ exports.postSignup = (req, res, next) => {
       res.redirect('/login');
       return transporter.sendMail({
         to: email,
-        from: 'merima.ceranic@edu.fit.ba',
+        from: process.env.USER_EMAL,
         subject: 'Signup succeeded!',
         html: '<h1> You successfully signed up! </h1>'
       });
@@ -216,11 +219,11 @@ exports.postReset = (req, res, next) => {
         res.redirect('/');
         transporter.sendMail({
           to: req.body.email,
-          from: 'merima.ceranic@edu.fit.ba',
+          from: process.env.USER_EMAL,
           subject: 'Password reset',
           html: `
               <p>You requested a password reset</p>
-              <p>Click this <a href="http://localhost:3500/reset/${token}">link</a> to set a new password.</p>
+              <p>Click this <a href="http://localhost:${process.env.LOCALHOST}/reset/${token}">link</a> to set a new password.</p>
             `
         });
       })
