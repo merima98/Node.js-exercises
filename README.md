@@ -233,7 +233,7 @@ SENDING EMAILS:
 	- Require using: const { v4: uuidv4 } = require('uuid');
 	- Add *cb(null, uuidv4() + '-' + file.originalname);* in fileStorage. This will fix errors that you can have. 
 	
--  Write *npm install --save pdfkit* in the terminal. PDFKit (https://pdfkit.org/) is a PDF document generation library for Node and the browser that makes creating complex, multi-page, printable documents easy. 
+-  Write *npm install --save pdfkit* in the terminal. [PDFKit](https://pdfkit.org/) is a PDF document generation library for Node and the browser that makes creating complex, multi-page, printable documents easy. 
 	
 	
 
