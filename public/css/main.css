@@ -250,9 +250,10 @@ form {
 }
 
 .pagination {
-  margin: 2rem;
+  margin-top: 2rem;
   text-align: center;
 }
+
 .pagination a {
   text-decoration: none;
   color: #00695c;
@@ -260,12 +261,13 @@ form {
   border: 1px solid #00695c;
   margin: 0 1rem;
 }
+
 .pagination a:hover,
-.pagination a:active,
-.pagination a:active {
-background-color: #00695c;
-color: white;
+.pagination .active {
+  background: #00695c;
+  color: white;
 }
+
 
 
 @media (min-width: 768px) {
