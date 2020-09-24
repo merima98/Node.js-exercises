@@ -235,6 +235,10 @@ SENDING EMAILS:
 	
 -  Write *npm install --save pdfkit* in the terminal. [PDFKit](https://pdfkit.org/) is a PDF document generation library for Node and the browser that makes creating complex, multi-page, printable documents easy. 
 	
+### Phase 22 :: Adding Payments
+
+- Create account at [stripe.com](https://stripe.com/)
+- Write *npm install --save stripe* in the terminal to be able working with stripe after creating an account.
 	
 
  
