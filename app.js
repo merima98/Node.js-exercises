@@ -17,6 +17,7 @@ const env = require('custom-env').env();
 const MONGODB_URI = process.env.MONGODB_URI;
 
 
+
 const app = express();
 const store = new MongoDBStore({
     uri: MONGODB_URI,
@@ -114,7 +115,7 @@ mongoose
         MONGODB_URI
     )
     .then(result => {
-        app.listen(process.env.PORT);
+        app.listen(process.env.PORT || 3000);
     }).catch(err => {
         console.log(err);
     });
