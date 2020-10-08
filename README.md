@@ -240,6 +240,10 @@ SENDING EMAILS:
 - Create account at [stripe.com](https://stripe.com/)
 - Write *npm install --save stripe* in the terminal to be able working with stripe after creating an account.
 	
+### Phase 23 :: Deploying application
+
+- Write *npm install --save [helmet](https://helmetjs.github.io/)* in the terminal. 
+- Write *npm install --save [compression](https://www.npmjs.com/package/compression)* in the terminal. 
 
  
 
