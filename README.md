@@ -1,4 +1,8 @@
 # Node.js-exercises
+
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
+
 ### 📝 This repository contains NodeJS exercises followed through Udemy course on topic ''NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)''
 
 ### NOTE: When using my source code, make sure to run "npm install" in the extracted folder
@@ -35,20 +39,20 @@
 - Installing Express.js
 - For installation it is necessary to run the following command through the terminal:
 
-  1. npm install --save express
+	  1. npm install --save express
   
 - Do some changes in app.js:
 
-  1. const  express = require('express');
+	  1. const  express = require('express');
 
-  2. const  app = express();
+	  2. const  app = express();
 
-  3. const server = http.createServer(app);   
+	  3. const server = http.createServer(app);   
   
 ### Phase 6
 - Adding Middleware 
 - In app.js do some changes:
-  1. app.use((req,res,next)=>{});
+	  1. app.use((req,res,next)=>{});
   
 ### Phase 7
 
@@ -56,13 +60,13 @@
 
 - For parsing incoming requests do next steps:
   
-  1. In terminal type: npm install --save body parser
-  
-  2. Add some changes in app.js:
-     
-	 - const bodyParser = require('body-parser');
+	  1. In terminal type: npm install --save body parser
+	  
+	  2. Add some changes in app.js:
+		 
+		 - const bodyParser = require('body-parser');
 
-     - app.use(bodyParser.urlencoded({extended: true}));
+		 - app.use(bodyParser.urlencoded({extended: true}));
 	 
 ### Phase 8
 
@@ -83,8 +87,8 @@
 
 - For implementing pug add some changes to:
   
-  - app.js: "app.set('view engine','pug');"
-  - shop.js: "res.render('shop');"
+	  - app.js: "app.set('view engine','pug');"
+	  - shop.js: "res.render('shop');"
   
 ### Phase 11
 
@@ -96,19 +100,19 @@
   
   - add some changes in app.js:
      
-	- app.engine('handlebars', expressHbs());
-	- app.set('view engine','handlebars');
+		- app.engine('handlebars', expressHbs());
+		- app.set('view engine','handlebars');
 
   - to use layouts to handlebars add changes to app.js:
     
-	- app.engine(
-	  'hbs',
-	  expressHbs({
-		layoutsDir: 'views/layouts/',
-		defaultLayout: 'main-layout',
-		extname: 'hbs'
-	  })
-	);
+		- app.engine(
+		  'hbs',
+		  expressHbs({
+			layoutsDir: 'views/layouts/',
+			defaultLayout: 'main-layout',
+			extname: 'hbs'
+		  })
+		);
 	
 
 ### Phase 12
@@ -119,16 +123,16 @@
 
 - Add some changes to app.js *remove next lines of code*:
  
-  - const expressHbs = require('express-handlebars');
-  
-  - app.engine(
-	  'hbs',
-	   expressHbs({
-	   layoutsDir: 'views/layouts/',
-	   defaultLayout: 'main-layout',
-	   extname: 'hbs'
-	  })
-	);
+	  - const expressHbs = require('express-handlebars');
+	  
+	  - app.engine(
+		  'hbs',
+		   expressHbs({
+		   layoutsDir: 'views/layouts/',
+		   defaultLayout: 'main-layout',
+		   extname: 'hbs'
+		  })
+		);
  
 ### Phase 13 :: Working with MySQL
 
@@ -167,40 +171,40 @@
 
 - Write *npm install --save connect-mongodb-session* in the terminal to let express session package store data in the database
 - Add changes in the app.js:
-	- const MongoDBStore = require('connect-mongodb-session')(session);
-	- const MONGODB_URI =   'mongodb+srv://merima98:merima1998@cluster0.w4ehk.mongodb.net/shop';
-	- const store = new MongoDBStore({
-    uri: MONGODB_URI,
-    collection: 'sessions'
-	});
-	- app.use(
-    session({
-        secret: 'my secret', 
-        resave: false, 
-        saveUninitialized: false,
-        store: store
-    })
-	);
-	- mongoose
-	.connect(
-		MONGODB_URI
-		)
-	.then(result=>{
-		User.findOne().then(user=>{
-			if(!user){
-				const user = new User({
-					name: 'Merima',
-					email: 'merima@gmail.com',
-					cart:{
-						items: []
-					}
-				});
-				user.save();
-			}
+		- const MongoDBStore = require('connect-mongodb-session')(session);
+		- const MONGODB_URI =   'mongodb+srv://merima98:merima1998@cluster0.w4ehk.mongodb.net/shop';
+		- const store = new MongoDBStore({
+		uri: MONGODB_URI,
+		collection: 'sessions'
 		});
-		app.listen(3500);
-	}).catch(err=>{
-		console.log(err);
+		- app.use(
+		session({
+			secret: 'my secret', 
+			resave: false, 
+			saveUninitialized: false,
+			store: store
+		})
+		);
+		- mongoose
+		.connect(
+			MONGODB_URI
+			)
+		.then(result=>{
+			User.findOne().then(user=>{
+				if(!user){
+					const user = new User({
+						name: 'Merima',
+						email: 'merima@gmail.com',
+						cart:{
+							items: []
+						}
+					});
+					user.save();
+				}
+			});
+			app.listen(3500);
+		}).catch(err=>{
+			console.log(err);
 		
 ### Phase 19 :: Adding Authentication
 
