@@ -172,7 +172,7 @@
 - Write *npm install --save connect-mongodb-session* in the terminal to let express session package store data in the database
 - Add changes in the app.js:
 		- const MongoDBStore = require('connect-mongodb-session')(session);
-		- const MONGODB_URI =   'mongodb+srv://merima98:merima1998@cluster0.w4ehk.mongodb.net/shop';
+		- const MONGODB_URI =   'mongodb+srv://xyz:xyz@cluster0.w4ehk.mongodb.net/shop';
 		- const store = new MongoDBStore({
 		uri: MONGODB_URI,
 		collection: 'sessions'
